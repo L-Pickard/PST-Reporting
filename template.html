@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #DDDDDD;
+  padding: 20px;
+  color: #333;
+}
+
+h2 {
+  color: #003DAB;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.note {
+  font-size: 0.875em;
+  color: #666;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+#exclusion {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#exclusion td, #exclusion th {
+  border: 1px solid #003DAB;
+  padding: 8px;
+}
+
+#exclusion tr {
+  background-color: #ffffff;
+}
+
+#exclusion tr:nth-child(even) {
+  background-color: #E8F0FE;
+}
+
+#exclusion tr:hover {background-color: #ddd;}
+
+#exclusion th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2371B6;
+  color: white;
+}
+</style>
+<html>
+    <h2>Org Potential Sell Through - {{.DynamicText}}</h2> <br>
+    <p>Please see attached the new excel potential sell through report.</p>
+
+<p class="note">Please see the below table for Ltd &amp; B.V and LLC exclusions:</p>
+<table id="exclusion">
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Table</th>
+        <th>Org Ltd</th>
+        <th>Org B.V</th>
+        <th>Org LLC</th>
+    </tr>
+    <tr>
+        <td>CU109506</td>
+        <td>NPD Samples EU</td>
+        <td>Exclusion</td>
+        <td>fOrderbook</td>
+        <td>🗸</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>CU110025</td>
+        <td>Org BV - NPD Samples EUR</td>
+        <td>Exclusion</td>
+        <td>fOrderbook</td>
+        <td>🗸</td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>CU110036</td>
+        <td>Org LLC (Management Recharge)</td>
+        <td>Exclusion</td>
+        <td>fOrderbook</td>
+        <td></td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>CU110040</td>
+        <td>Org BV (Management Recharge)</td>
+        <td>Exclusion</td>
+        <td>fOrderbook</td>
+        <td></td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>CU110083</td>
+        <td>Org BV - NPD Samples USD</td>
+        <td>Exclusion</td>
+        <td>fOrderbook</td>
+        <td></td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>UC000340</td>
+        <td>Org Marketing</td>
+        <td>Exclusion</td>
+        <td>fOrderbook</td>
+        <td></td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>UC000650</td>
+        <td>Management Recharge Org Ltd</td>
+        <td>Exclusion</td>
+        <td>fOrderbook</td>
+        <td></td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>UC000653</td>
+        <td>Management recharge Org EU BV</td>
+        <td>Exclusion</td>
+        <td>fOrderbook</td>
+        <td></td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>CU103500</td>
+        <td>Org Limited</td>
+        <td>Intercompany</td>
+        <td>fOrderbook</td>
+        <td>🗸</td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>CU109221</td>
+        <td>Org EU B.V.Replen</td>
+        <td>Intercompany</td>
+        <td>fOrderbook</td>
+        <td>🗸</td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>CU109441</td>
+        <td>Org EU BV BTB</td>
+        <td>Intercompany</td>
+        <td>fOrderbook</td>
+        <td>🗸</td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>CU109444</td>
+        <td>Org EU BV Replen DONT USE</td>
+        <td>Intercompany</td>
+        <td>fOrderbook</td>
+        <td>🗸</td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>CU109525</td>
+        <td>Org EU Riga B2B</td>
+        <td>Intercompany</td>
+        <td>fOrderbook</td>
+        <td>🗸</td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>CU110077</td>
+        <td>Org LLC</td>
+        <td>Intercompany</td>
+        <td>fOrderbook</td>
+        <td>🗸</td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>CU110744</td>
+        <td>Org EU B.V. ..  Redwood Replen</td>
+        <td>Intercompany</td>
+        <td>fOrderbook</td>
+        <td></td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>UC000458</td>
+        <td>Org Ltd</td>
+        <td>Intercompany</td>
+        <td>fOrderbook</td>
+        <td></td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>CU110025</td>
+        <td>Org BV - NPD Samples EUR</td>
+        <td>Exclusion</td>
+        <td>fSales</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>CU110036</td>
+        <td>Org LLC (Management Recharge)</td>
+        <td>Exclusion</td>
+        <td>fSales</td>
+        <td>🗸</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>CU110040</td>
+        <td>Org BV (Management Recharge)</td>
+        <td>Exclusion</td>
+        <td>fSales</td>
+        <td>🗸</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>CU110083</td>
+        <td>Org BV - NPD Samples USD</td>
+        <td>Exclusion</td>
+        <td>fSales</td>
+        <td>🗸</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>CU109506</td>
+        <td>NPD Samples EU</td>
+        <td>Exclusion</td>
+        <td>fSales</td>
+        <td></td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>UC000650</td>
+        <td>Management Recharge Org Ltd</td>
+        <td>Exclusion</td>
+        <td>fSales</td>
+        <td></td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>UC000653</td>
+        <td>Management recharge Org EU BV</td>
+        <td>Exclusion</td>
+        <td>fSales</td>
+        <td></td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>UC000340</td>
+        <td>Org Marketing</td>
+        <td>Exclusion</td>
+        <td>fSales</td>
+        <td></td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>CU103500</td>
+        <td>Org Limited</td>
+        <td>Intercompany</td>
+        <td>fSales</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>CU109221</td>
+        <td>Org EU B.V.Replen</td>
+        <td>Intercompany</td>
+        <td>fSales</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>CU109441</td>
+        <td>Org EU BV BTB</td>
+        <td>Intercompany</td>
+        <td>fSales</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>CU109444</td>
+        <td>Org EU BV Replen DONT USE</td>
+        <td>Intercompany</td>
+        <td>fSales</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>CU109525</td>
+        <td>Org EU Riga B2B</td>
+        <td>Intercompany</td>
+        <td>fSales</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>CU110077</td>
+        <td>Org LLC</td>
+        <td>Intercompany</td>
+        <td>fSales</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>CU110744</td>
+        <td>Org EU B.V. ..  Redwood Replen</td>
+        <td>Intercompany</td>
+        <td>fSales</td>
+        <td>🗸</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>UC000458</td>
+        <td>Org Ltd</td>
+        <td>Intercompany</td>
+        <td>fSales</td>
+        <td></td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>UV000199</td>
+        <td>Management Recharge Org Ltd</td>
+        <td>Exclusion</td>
+        <td>fPurchases</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>UV000200</td>
+        <td>Managemment Recharge Org EU BV</td>
+        <td>Exclusion</td>
+        <td>fPurchases</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>VE100194</td>
+        <td>Org Properties Limited</td>
+        <td>Exclusion</td>
+        <td>fPurchases</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>VE100890</td>
+        <td>Org LLC (Management Recharge)</td>
+        <td>Exclusion</td>
+        <td>fPurchases</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>UV000081</td>
+        <td>Org Ltd</td>
+        <td>Intercompany</td>
+        <td>fPurchases</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>UV000195</td>
+        <td>Org EU BV</td>
+        <td>Intercompany</td>
+        <td>fPurchases</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>VE100520</td>
+        <td>Org Ltd - Replen</td>
+        <td>Intercompany</td>
+        <td>fPurchases</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>VE100927</td>
+        <td>Org Ltd</td>
+        <td>Intercompany</td>
+        <td>fPurchases</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>VE100934</td>
+        <td>Org LLC</td>
+        <td>Intercompany</td>
+        <td>fPurchases</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>VE100952</td>
+        <td>Org EU B.V.</td>
+        <td>Intercompany</td>
+        <td>fPurchases</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td>🗸</td>
+    </tr>
+</table>
+<br>
+
+<p class="note">Please see the below table for the merchandising pst exclusions:</p>
+<table id="exclusion">
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Org Ltd</th>
+        <th>Org B.V</th>
+        <th>Org LLC</th>
+    </tr>
+    <tr>
+        <td>CU110036</td>
+        <td>Org LLC (Management Recharge)</td>
+        <td>Sales Order</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>CU110077</td>
+        <td>Org LLC</td>
+        <td>Sales Order</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>CU103500</td>
+        <td>Org Limited</td>
+        <td>Sales Order</td>
+        <td></td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>UC000650</td>
+        <td>Management Recharge Org Ltd</td>
+        <td>Sales Order</td>
+        <td></td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>UC000653</td>
+        <td>Management recharge Org EU BV</td>
+        <td>Sales Order</td>
+        <td></td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>UC000340</td>
+        <td>Org Marketing</td>
+        <td>Sales Order</td>
+        <td></td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>UC000458</td>
+        <td>Org Ltd</td>
+        <td>Sales Order</td>
+        <td></td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>CU110036</td>
+        <td>Org LLC (Management Recharge)</td>
+        <td>Shipped Qty</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>CU110077</td>
+        <td>Org LLC</td>
+        <td>Shipped Qty</td>
+        <td>🗸</td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>CU103500</td>
+        <td>Org Limited</td>
+        <td>Shipped Qty</td>
+        <td></td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>UC000650</td>
+        <td>Management Recharge Org Ltd</td>
+        <td>Shipped Qty</td>
+        <td></td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>UC000653</td>
+        <td>Management recharge Org EU BV</td>
+        <td>Shipped Qty</td>
+        <td></td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>UC000340</td>
+        <td>Org Marketing</td>
+        <td>Shipped Qty</td>
+        <td></td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>UC000458</td>
+        <td>Org Ltd</td>
+        <td>Shipped Qty</td>
+        <td></td>
+        <td></td>
+        <td>🗸</td>
+    </tr>
+    <tr>
+        <td>VE100927</td>
+        <td>Org Ltd - Back to Back</td>
+        <td>Purchase Order</td>
+        <td></td>
+        <td>🗸</td>
+        <td></td>
+    </tr>
+</table>
+<br>
+<p>Please note that for the merchandising pst all shipped qtys and sales orders for Org B.V are excluded where the invoice/order number exists in Org Ltd.</p>
+
+</html>
